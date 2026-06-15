@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Explorando a Caatinga</title>
+</head>
+<body>
+
+  <div id="telaInicial" style="
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(#87ceeb, #d19a4a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    font-family: Arial;
+  ">
+    <h1 style="font-size: 48px; color: white;">🌵 Explorando a Caatinga</h1>
+
+    <p style="color: white; font-size: 20px; max-width: 600px; text-align: center;">
+      Conheça nossa fauna, responda desafios e acumule pontos.
+    </p>
+
+    <button id="btnComecar" style="
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 22px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    ">
+      Começar
+    </button>
+  </div>
+
+  <div id="pontuacao" style="
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    z-index: 10;
+  ">
+    Pontos: 0
+  </div>
+
+  <div id="cardJogo" style="
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    font-family: Arial;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 10;
+  ">
+    <h2 id="cardTitulo"></h2>
+    <p id="cardTexto"></p>
+
+    <div id="opcoesQuiz"></div>
+
+    <p id="feedback"></p>
+
+    <button onclick="voltarCard()">⬅️</button>
+    <button onclick="proximoCard()">➡️</button>
+    <button onclick="fecharCard()">Fechar</button>
+  </div>
+
+  <audio id="musica" loop>
+    <source src="/sounds/caatinga_vento_ambiente.wav" type="audio/wav">
+  </audio>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
